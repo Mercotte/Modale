@@ -1,7 +1,6 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 body,
 html {
@@ -9,14 +8,18 @@ html {
     Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   height: 100%;
 }
-main {
+.main {
+  display: flex;
+  place-content: center;
+  align-items: center;
   background-image: url(./lanterne.jpg);
   background-repeat: no-repeat;
-  height: 100%;
-
+  height: 100vh;
   background-size: cover;
-  justify-content: center;
-  background-position: relative;
+}
+.img {
+  height: 100%;
+  width: 100%;
 }
 
 .projet-modale {
@@ -26,54 +29,60 @@ main {
   place-content: center;
   color: white;
   text-transform: capitalize;
-  padding: 9rem;
-  width: 50vw;
+  padding: 5rem;
+  width: 30vw;
 }
 .open-modale {
   border: none;
   display: grid;
   place-content: center;
-
   background-color: white;
   color: rgb(3, 3, 78);
   cursor: pointer;
   padding: 1rem;
   margin-top: 2rem;
-  font-size: medium;
   font-weight: 600;
 }
 .open-modale:hover {
   background-color: rgb(3, 3, 78);
-  color: lightblue;
+  color: white;
 }
 
+h1,
+h2 {
+  text-align: center;
+}
 .content-modale {
   display: grid;
-  position: fixed;
+  place-items: center;
+  align-content: center;
+  width: 200px;
+  height: 170px;
+  position: relative;
   opacity: 0;
   z-index: -1;
-  background-color: rgb(3, 3, 78);
-  color: white;
+  background-color: white;
+  color: rgb(3, 3, 78);
   padding: 1rem;
-  margin-top: 2rem;
-  font-size: medium;
-  font-weight: 600;
+  margin: 1rem;
 }
 .close-modale {
-  display: grid;
+  display: block;
+  position: absolute;
+  top: 0.5rem;
+  right: 1rem;
+  font-size: 2rem;
   color: darkred;
   cursor: pointer;
   border: none;
   background-color: transparent;
   width: 50px;
-  padding: 2rem;
-  font-weight: bold;
-  font-size: larger;
+  height: 50px;
 }
 .close-modale:hover {
   color: orange;
-  transition: all 0.3s ease-in;
-  transform: rotate(360deg);
+  transition: all 0.3s linear;
+  transform: rotate(90deg);
 }
 
 .show-modale {
